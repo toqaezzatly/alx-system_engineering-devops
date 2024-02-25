@@ -1,1 +1,2 @@
-bash scripting 
+bash scripting_`:wq
+ 
