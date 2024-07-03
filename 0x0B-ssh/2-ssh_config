@@ -1,0 +1,6 @@
+Host myserver
+    HostName 98.98.98.98  # Replace with the actual IP address or hostname of your server
+    User ubuntu
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
+
