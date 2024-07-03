@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
+# This script connects to a server using SSH with a private key
 
-ssh -i "$HOME ~/.ssh/school" ubuntu@8.8.8.8
+# Define the server's address (replace with your server's address)
+SERVER="8.8.8.8"
+
+# Use ssh with single-character flags to connect using the specified key
+ssh -i ~/.ssh/school ubuntu@$SERVER
+
