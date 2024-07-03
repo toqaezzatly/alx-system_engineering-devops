@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ssh -i "$HOME ~/.ssh/school" ubuntu@8.8.8.8
