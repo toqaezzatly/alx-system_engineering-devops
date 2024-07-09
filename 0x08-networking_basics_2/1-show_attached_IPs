@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-# Use ip command to get IPv4 addresses
-ip addr show | awk '/inet addr/ {print $2}' | grep -v 127.0.0.1
-
-# Alternative method using hostname (displays all IP addresses, not just active)
-# hostname -I
-

@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+#This script installs a nginx server(reverse server) and configures it to add a custom http header X-server-by with the server's hostname
+
+
+#update the package index 
+sudo apt-get update
+
+#Install Nginx 
+sudo apt-get install -y nginx
+
+#Get the hostname
+HOSTNAME=$(hostname)
+
+#Configure Nginx to add the custom http header
+sudo bash -c 'cat > /etc/nginx/conf.d/custom_header/conf' << EOF
+
+server {
+	listen 80 defalt_server;
+	listen [::]:80 default_server;
+
+	server_name_;
+
+	location / {
+		add_header X-Servered-By $HOSTNAME;
+	}
+
+
+
+}
+EOF
+
+#Restart Nginx to apply the new configuration 
+sudo systemctl restart nginx
