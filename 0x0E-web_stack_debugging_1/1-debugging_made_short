@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+nginx_config="/etc/nginx/sites-available/default"
+
+sed -i 's/listen 80 default_server;/listen 80;/' "$nginx_config"
+sudo systemctl restart nginx
+sleep 2
+service nginx status | grep -q "not running"
