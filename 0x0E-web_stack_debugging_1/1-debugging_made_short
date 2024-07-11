@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Installing new server to serve content
-./0-nginx_likes_port_80
-echo "hi" > /var/run/nginx.pid
-echo "hi" > /run/nginx.pid
+# Setting up server to curl port 80 with no issues
+apt-get update && apt-get -y install nginx
+sed -i 's/listen 80 default_server;/listen 80;/' /etc/nginx/sites-available/default
+sed -i 's/listen \[::\]:80 default_server;/listen [::]:80;/' /etc/nginx/sites-available/default
+service nginx restart
