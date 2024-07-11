@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
-
-nginx_config="/etc/nginx/sites-available/default"
-
-sed -i 's/listen 80 default_server;/listen 80;/' "$nginx_config"
-sudo systemctl restart nginx
-sleep 2
-service nginx status | grep -q "not running"
+# This script configures Nginx to listen on port 80 of all active IPv4 IPs
+sed -i 's/listen 80;/listen 80 default_server;/g' /etc/nginx/sites-available/default
+nginx -s reload
