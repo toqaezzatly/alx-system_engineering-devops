@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This script retrieves DNS information for subdomains
+
+function get_subdomain_info() {
+  local domain=$1
+  local subdomain=$2
+  if [ -z "$subdomain" ]; then
+    subdomains=("www" "lb-01" "web-01" "web-02")
+    for sub in "${subdomains[@]}"; do
+      result=$(dig +short "$sub.$domain")
+      echo "The subdomain $sub is an A record and points to $result"
+    done
+  else
+    result=$(dig +short "$subdomain.$domain")
+    echo "The subdomain $subdomain is an A record and points to $result"
+  fi
+}
+
+get_subdomain_info "$1" "$2"
