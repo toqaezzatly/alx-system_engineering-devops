@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import requests
 
 api_key = 'your_datadog_api_key'
