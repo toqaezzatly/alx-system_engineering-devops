@@ -1,5 +1,3 @@
----
-
 # Postmortem: "The Case of the Phantom 500"
 
 ## Issue Summary
